@@ -1,4 +1,15 @@
-/* @theme labo */
+/* @theme sample */
+
+:root{
+    --color-header: rgb(0, 25, 100);
+    --color-headerText: white;
+    --color-background: white;
+    --color-title: rgb(0,25, 100);
+    --color-text: black;
+
+    --margin-left: 50px;
+    --margin-right: 50px;
+}
 
 @import 'default';
 
@@ -6,28 +17,110 @@ section {
 	width: 1920px;
 	height: 1080px;
 	font-size: 40px;
-    font-family: "HG創英角ゴシックUB", "Arial", "Symbol";
-	padding: 40px;
+    font-family: "Arial", "HG創英角ｺﾞｼｯｸUB", "Symbol", sans-serif;
+    font-weight: normal;
+    padding-top: 300px;
+    padding-left: 75px;
+    background-color: var(--color-background);
 	background-repeat: no-repeat;
 	background-position: right top;
+    justify-content: start;
+    color: var(--color-text);
 }
 
 header {
-	width: 100%;
 	padding: 1px;
-	color: white;
-	background: linear-gradient(to right, blue, white);
-	top: 120px;
+	color: var(--color-headerText);
+	background: linear-gradient(to right, var(--color-header), var(--color-background));
+    text-align: left;
+	left: var(--margin-left);
+    right: var(--margin-right);
+    top: 50px;
+    height: 50px;
+    font-size: 35px;
 }
 
 footer {
-	width: 100%;
-	background-color: white;
-	color: black;
-	text-align: left;
+    padding: 1px;
+    color: black;
+    background: linear-gradient(to right, var(--color-background), var(--color-header));
+    text-align: left;
+    left: var(--margin-left);
+    right: var(--margin-right);
+    bottom: 50px;
+    height: 50px;
+    font-size: 35px;
 }
 
-h1 {
+h2 {
 	font-size: 90px;
-	color: #09c;
+    font-weight: normal;
+	color: var(--color-title);
+    position: absolute;
+    left: var(--margin-left);
+    top: 120px;
+}
+
+/* title */
+section.title {
+    text-align: center;
+}
+
+section.title h1 {
+    font-size : 150px;
+    text-align: left;
+    justify-content: top;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    color: var(--color-title);
+    font-weight: normal;
+}
+
+section.title p{
+    text-align: right;
+    font-size: 50px;
+    justify-content: end;
+    position: absolute;
+    right: var(--margin-right);
+    padding-right: 10px;
+    bottom: 150px;
+}
+
+
+/* toc */
+section.toc {
+    position: absolute;
+    text-align: left;
+    font-size: 50px;
+    justify-content: start;
+    padding-top: 100px;
+    padding-left: 250px;
+}
+
+section.toc header {
+    position: absolute;
+    bottom: 50px;
+    right: 1680px;
+    height: auto;
+    color: var(--color-header);
+    background: var(--color-header);
+}
+
+section.toc footer {
+    left: 2000px;
+}
+
+section.toc h2 {
+    color: var(--color-background);
+}
+
+/* page */
+section::after {
+    content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+    font-size: 80%;
+    color: white;
+    right: var(--margin-right);
+    margin-right: 10px;
+    bottom: 50px;
 }
